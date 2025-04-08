@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  matcher: ['/admin/dashboard/:path*', '/admin/:path*', '/admin/profile/:path*']
+  transpilePackages: ["antd", "@ant-design", "rc-util", "rc-pagination", "rc-picker", "rc-notification", "rc-tooltip", "rc-tree", "rc-table"],
 };
 
 export default nextConfig;
