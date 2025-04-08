@@ -2,10 +2,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import client from '@/utils/redis'; // Make sure this is your configured Redis client
 
-export async function GET(
-  _req: NextRequest,
-  { params }: { params: { slug: string } }
-) {
+export async function GET(_req: NextRequest, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
 
   try {
     const { slug } = params;
@@ -19,13 +17,10 @@ export async function GET(
   } catch (error) {
     return NextResponse.json({ error:error},{status:400}); 
   }
-
 }
 
-export async function POST(
-  _req: NextRequest,
-  { params }: { params: { slug: string } }
-) {
+export async function POST(_req: NextRequest, props: { params: Promise<{ slug: string }> }) {
+  const params = await props.params;
   const { slug } = params;
 
   if (!slug) {

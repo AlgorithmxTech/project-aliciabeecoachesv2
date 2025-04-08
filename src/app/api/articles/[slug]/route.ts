@@ -1,11 +1,10 @@
 import { NextResponse } from 'next/server';
-import { getArticleBySlug, deleteArticle,updateArticle } from '@/servies/article.services';
+import { getArticleBySlug, deleteArticle, updateArticle } from '@/servies/article.services';
 
 export async function GET(
   req: Request,
-  contextPromise: Promise<{ params: { slug: string } }>
+  { params }: { params: { slug: string } }
 ) {
-  const { params } = await contextPromise;
   const { slug } = params;
 
   try {
@@ -24,9 +23,8 @@ export async function GET(
 
 export async function DELETE(
   req: Request,
-  contextPromise: Promise<{ params: { slug: string } }>
+  { params }: { params: { slug: string } }
 ) {
-  const { params } = await contextPromise;
   const { slug } = params;
 
   try {
@@ -38,12 +36,10 @@ export async function DELETE(
   }
 }
 
-
 export async function PUT(
   req: Request,
-  contextPromise: Promise<{ params: { slug: string } }>
+  { params }: { params: { slug: string } }
 ) {
-  const { params } = await contextPromise;
   const { slug } = params;
 
   try {
