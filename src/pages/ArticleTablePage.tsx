@@ -90,22 +90,23 @@ const ArticleTablePage: React.FC = () => {
 
   const handleAuthorSubmit = async () => {
     try {
+      setAuthorLoading(true); // <-- start loading here
       const values = await authorForm.validateFields();
       const formData = new FormData();
-
+  
       formData.append('author_name', values.author_name);
       formData.append('author_desciption', values.author_desciption);
-
+  
       const file = authorForm.getFieldValue('author_image_file');
       if (file) {
         formData.append('author_image', file);
       }
-
+  
       const res = await fetch(`/api/authors/${constantAuthorId}`, {
         method: 'PUT',
         body: formData,
       });
-
+  
       const data = await res.json();
       if (res.ok) {
         message.success('Author updated successfully');
@@ -117,8 +118,11 @@ const ArticleTablePage: React.FC = () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       message.error('Update failed');
+    } finally {
+      setAuthorLoading(false);
     }
   };
+  
 
 
   useEffect(() => {
@@ -328,54 +332,68 @@ const ArticleTablePage: React.FC = () => {
 
       {/* Edit Author Modal */}
       <Modal
-        title="Edit Author"
-        open={editAuthorVisible}
-        onCancel={() => setEditAuthorVisible(false)}
-        onOk={handleAuthorSubmit}
-        okText="Update"
-        confirmLoading={authorLoading}
+  title="Edit Author"
+  open={editAuthorVisible}
+  onCancel={() => setEditAuthorVisible(false)}
+  onOk={handleAuthorSubmit}
+  okText="Update"
+  confirmLoading={authorLoading}
+>
+  <Form layout="vertical" form={authorForm}>
+    <Form.Item
+      name="author_name"
+      label="Author Name"
+      rules={[{ required: true, message: 'Author name is required' }]}
+    >
+      <Input />
+    </Form.Item>
+    <Form.Item
+      name="author_desciption"
+      label="Description"
+      rules={[{ required: true, message: 'Description is required' }]}
+    >
+      <Input.TextArea rows={3} />
+    </Form.Item>
+
+    <Form.Item label="Current Image">
+      {authorForm.getFieldValue('author_image') ? (
+        <img
+          src={authorForm.getFieldValue('author_image')}
+          alt="Author"
+          className="w-18 h-18"
+          style={{ maxWidth: '100%', borderRadius: '0.5rem', marginBottom: 8 }}
+        />
+      ) : (
+        <span>No image available</span>
+      )}
+    </Form.Item>
+
+    <Form.Item label="Upload New Image">
+      <input
+        type="file"
+        accept="image/*"
+        id="upload-image"
+        style={{ display: 'none' }}
+        onChange={(e) => {
+          const file = e.target.files?.[0];
+          if (file) {
+            authorForm.setFieldValue('author_image_file', file);
+          }
+        }}
+      />
+      <Button
+        onClick={() => document.getElementById('upload-image')?.click()}
+        style={{ marginBottom: 8 }}
       >
-        <Form layout="vertical" form={authorForm}>
-          <Form.Item
-            name="author_name"
-            label="Author Name"
-            rules={[{ required: true, message: 'Author name is required' }]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item
-            name="author_desciption"
-            label="Description"
-            rules={[{ required: true, message: 'Description is required' }]}
-          >
-            <Input.TextArea rows={3} />
-          </Form.Item>
-          <Form.Item label="Current Image">
-            {authorForm.getFieldValue('author_image') ? (
-              <img
-                src={authorForm.getFieldValue('author_image')}
-                alt="Author"
-                className='w-18 h-18'
-                style={{ maxWidth: '100%', borderRadius: '0.5rem', marginBottom: 8 }}
-              />
-            ) : (
-              <span>No image available</span>
-            )}
-          </Form.Item>
-          <Form.Item label="Upload New Image">
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(e) => {
-                const file = e.target.files?.[0];
-                if (file) {
-                  authorForm.setFieldValue('author_image_file', file);
-                }
-              }}
-            />
-          </Form.Item>
-        </Form>
-      </Modal>
+        Choose Image
+      </Button>
+      <div style={{ fontSize: 12, color: '#888' }}>
+        {authorForm.getFieldValue('author_image_file')?.name || 'No file chosen'}
+      </div>
+    </Form.Item>
+  </Form>
+</Modal>
+
 
     </div>
   );
