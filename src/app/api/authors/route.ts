@@ -1,7 +1,7 @@
 import { writeFile } from 'fs/promises';
 import path from 'path';
 import { NextRequest, NextResponse } from 'next/server';
-import { createAuthor,getAllAuthors } from '@/services/author.services';
+import { createAuthor,getAllAuthors } from '@/servies/author.services';
 import { v4 as uuidv4 } from 'uuid';
 
 export async function POST(req: NextRequest) {
