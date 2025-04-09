@@ -53,7 +53,7 @@ const Footer = () => {
                     <span>
                         Developed by{' '}
                         <a
-                            href="https://www.algorithmx.tech"
+                            href="https://www.algorithmx.tech/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-blue-600 hover:underline"
