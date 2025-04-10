@@ -39,11 +39,14 @@ const Footer = () => {
                         </Link>
                     </div>
                     <div className='rounded-full p-2 bg-red-500 '>
+                        <Link href={'https://www.patreon.com/AliciaBeeCoaches'}>
                         <Image
                             src={petrionImage}
                             alt='patreon_logo'
                             className='w-[24px] h-[24px]'
                         />
+                        </Link>
+                      
                     </div>
 
                 </div>

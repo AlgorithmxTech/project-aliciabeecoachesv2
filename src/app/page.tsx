@@ -46,7 +46,7 @@ export default function Home() {
 
 <div className=" flex items-center px-5 md:px-0 flex-col gap-10 justify-center py-10">
 
-  <h1 className="text-4xl py-20 text-center bg-gradient-to-r  dark:from-white from-black to-red-500 text-transparent bg-clip-text italic ">
+  <h1 className="text-2xl py-20 text-center bg-gradient-to-r  dark:from-white from-black to-red-500 text-transparent bg-clip-text italic ">
   I&apos;m Alicia Bee, founder of Alicia Bee Coaches. I specialize in helping women with 5+ years of work experience transition into fulfilling tech careers - no college degree or coding experience required. Through my weekly live sessions on You Tube and resources in my community on Patreon, I provide practical guidance to help you take control of your career path. 
 
 Ready to start your journey into tech? Connect with me and let&apos;s begin!
