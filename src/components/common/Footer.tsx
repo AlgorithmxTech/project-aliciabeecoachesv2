@@ -14,31 +14,31 @@ const Footer = () => {
                     <span>
                         hello@alicebeecoaches.com
                     </span>
-                    <span>6600 Chase Oaks Blvd., Ste, 150. </span>
+                    <span>6600 Chase Oaks Blvd., Ste, 150 </span>
                     <span>Plano, TX 75023</span>
                 </div>
                 {/* social media links */}
                 <div className='flex gap-5 '>
-                    <div className='rounded-full p-2 bg-red-500 '>
+                    <div className='rounded-full p-2 bg-[#a40000]'>
                         <Link href={'https://www.tiktok.com/@aliciabeecoaches'}>
                             <FaTiktok size={24} className='text-black' />
                   
                         </Link>
 
                     </div>
-                    <div className='rounded-full p-2 bg-red-500 '>
+                    <div className='rounded-full p-2 bg-[#a40000]'>
                         <Link href={'https://instagram.com/AliciaBeeCoaches'}>
 
                             <FaInstagram size={24} className=' text-black' />
                         </Link>
                     </div>
-                    <div className='rounded-full p-2 bg-red-500 '>
+                    <div className='rounded-full p-2 bg-[#a40000]'>
                         <Link href={'https://www.youtube.com/@AliciaBeeCoaches'}>
 
                             <FaYoutube size={24} className=' text-black' />
                         </Link>
                     </div>
-                    <div className='rounded-full p-2 bg-red-500 '>
+                    <div className='rounded-full p-2 bg-[#a40000]'>
                         <Link href={'https://www.patreon.com/AliciaBeeCoaches'}>
                         <Image
                             src={petrionImage}
