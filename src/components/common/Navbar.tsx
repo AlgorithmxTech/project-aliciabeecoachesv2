@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from '../../../public/images/picsvg_download.svg'
+import Logo from '../../../public/images/Original_on_Transparent-removebg-preview.png'
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -16,11 +16,11 @@ const Navbar = () => {
   <Image
   src={Logo}
   alt="alicia Bee Coached"
-className="w-16 h-18"
+className="w-29  h-25"
   />
  
 
-<h1 className="text-xl font-bold">Alicia Bee Coaches</h1>
+<h1 className="text-xl text-[#fff0f5] font-bold">Alicia Bee Coaches</h1>
 </div>
         
 

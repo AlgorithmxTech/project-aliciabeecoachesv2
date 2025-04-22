@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montesrrat.variable}  antialiased`}
+        className={`${montesrrat.variable}  antialiased bg-[#fff0f5]`}
       >
 
           {children}
