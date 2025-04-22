@@ -16,7 +16,7 @@ const Navbar = () => {
   <Image
   src={Logo}
   alt="alicia Bee Coached"
-className="w-29  h-25"
+className="w-32  h-25"
   />
  
 
