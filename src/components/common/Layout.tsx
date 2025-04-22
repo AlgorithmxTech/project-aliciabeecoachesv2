@@ -2,7 +2,7 @@ import React from 'react';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="max-w-[1280px] mx-auto min-h-screen ">
+    <div className="max-w-[960px] mx-auto min-h-screen ">
       <main>{children}</main>
     </div>
   );

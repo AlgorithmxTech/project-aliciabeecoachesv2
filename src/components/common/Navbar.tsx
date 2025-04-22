@@ -9,14 +9,17 @@ const Navbar = () => {
 
   return (
     <div className="w-full  py-5 bg-black text-white">
-      <div className="max-w-[1280px] mx-auto h-full flex justify-between items-center px-4">
+      <div className="max-w-[1080px] mx-auto h-full flex justify-between items-center px-4">
         
 <div className="flex  items-center gap-3">
+  
   <Image
   src={Logo}
   alt="alicia Bee Coached"
 className="w-16 h-18"
   />
+ 
+
 <h1 className="text-xl font-bold">Alicia Bee Coaches</h1>
 </div>
         
@@ -24,7 +27,6 @@ className="w-16 h-18"
 
         <nav className="hidden md:flex gap-6">
           <Link href="/" className="hover:text-gray-400">Home</Link>
-          <Link href="/articles" className="hover:text-gray-400">Articles</Link>
           <Link href="/privacy-policy" className="hover:text-gray-400">Privacy Policy</Link>
         </nav>
 
@@ -40,7 +42,6 @@ className="w-16 h-18"
           <FaTimes size={30} />
         </button>
         <Link href="/" className="hover:text-gray-400" onClick={() => setMenuOpen(false)}>Home</Link>
-        <Link href="/articles" className="hover:text-gray-400" onClick={() => setMenuOpen(false)}>Articles</Link>
         <Link href="/privacy-policy" className="hover:text-gray-400" onClick={() => setMenuOpen(false)}>Privacy Policy</Link>
       </div>
     </div>
