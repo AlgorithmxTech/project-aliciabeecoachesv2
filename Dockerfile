@@ -7,9 +7,6 @@ RUN npm install
 
 COPY . .
 
-WORKDIR /app
-
-RUN npx prisma generate
 
 RUN npm run build
 
