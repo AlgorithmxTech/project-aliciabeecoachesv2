@@ -1,0 +1,19 @@
+services:
+  nextjs:
+   container_name: aj-web
+   build: .
+   ports:
+    - "3000:3000"
+   environment:
+    NODE_ENV: ${NODE_ENV}
+    REDIS_URL: ${REDIS_URL}
+    MAILER_LITE_API_KEY: ${MAILER_LITE_API_KEY}
+   volumes:
+    - .:/app  
+   networks:
+    - nextjs-network
+
+
+networks:
+  nextjs-network:
+    driver: bridge 

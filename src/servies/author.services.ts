@@ -21,14 +21,17 @@ export const getAuthorById = async (id: string) => {
   });
 };
 
-export const updateAuthor = async (id: string, data: Partial<{
-  author_name: string;
-  author_desciption: string;
-  author_image: string;
-}>) => {
+export const updateAuthor = async (id: string,
+  author_name: string,
+  author_desciption: string,
+  author_image?: string) => {
   return prisma.author.update({
     where: { author_id: id },
-    data,
+    data:{
+      author_name:author_name,
+      author_desciption:author_desciption,
+      author_image:author_image || " "
+    },
   });
 };
 

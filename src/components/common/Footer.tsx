@@ -6,7 +6,7 @@ import Link from 'next/link'
 const Footer = () => {
     return (
         <div className='w-full bg-gray-900 py-10 text-white'>
-            <div className='max-w-[1280px] mx-auto flex flex-col items-center gap-5'>
+            <div className='max-w-[1080px] mx-auto flex flex-col items-center gap-5'>
                 <div className='flex items-center flex-col'>
                     <span>
                         Alice Bee Coaches
@@ -14,41 +14,44 @@ const Footer = () => {
                     <span>
                         hello@alicebeecoaches.com
                     </span>
-                    <span>2931 Ridge Rd Ste. 101 #643</span>
-                    <span>Rockwall, TX 75189</span>
+                    <span>6600 Chase Oaks Blvd., Ste, 150 </span>
+                    <span>Plano, TX 75023</span>
                 </div>
                 {/* social media links */}
                 <div className='flex gap-5 '>
-                    <div className='rounded-full p-2 bg-red-500 '>
+                    <div className='rounded-full p-2 bg-[#a40000]'>
                         <Link href={'https://www.tiktok.com/@aliciabeecoaches'}>
                             <FaTiktok size={24} className='text-black' />
                   
                         </Link>
 
                     </div>
-                    <div className='rounded-full p-2 bg-red-500 '>
+                    <div className='rounded-full p-2 bg-[#a40000]'>
                         <Link href={'https://instagram.com/AliciaBeeCoaches'}>
 
                             <FaInstagram size={24} className=' text-black' />
                         </Link>
                     </div>
-                    <div className='rounded-full p-2 bg-red-500 '>
+                    <div className='rounded-full p-2 bg-[#a40000]'>
                         <Link href={'https://www.youtube.com/@AliciaBeeCoaches'}>
 
                             <FaYoutube size={24} className=' text-black' />
                         </Link>
                     </div>
-                    <div className='rounded-full p-2 bg-red-500 '>
+                    <div className='rounded-full p-2 bg-[#a40000]'>
+                        <Link href={'https://www.patreon.com/AliciaBeeCoaches'}>
                         <Image
                             src={petrionImage}
                             alt='patreon_logo'
                             className='w-[24px] h-[24px]'
                         />
+                        </Link>
+                      
                     </div>
 
                 </div>
 
-                <div className="flex py-5 justify-between w-full items-center">
+                <div className="flex flex-col py-5 justify-between w-full items-center">
                     <span>©2025 by ABC&apos;s of Agile with Alicia Bee Coaches.</span>
                     <span>
                         Developed by{' '}
