@@ -1,7 +1,11 @@
 services:
   nextjs:
    container_name: aj-web
-   build: .
+   platform: linux/amd64
+   build: 
+    context: .
+    dockerfile: Dockerfile
+   
    ports:
     - "3000:3000"
    environment:
